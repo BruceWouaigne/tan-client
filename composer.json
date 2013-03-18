@@ -1,0 +1,26 @@
+{
+    "name": "BuceWouaigne/tan-client",
+    "description": "TAN api client written in PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Charrier",
+            "email": "denis.charrier@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"Tan": "src/"}
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "guzzle/guzzle": "~3.1.1"
+    },
+    "require-dev": {
+        "phpspec/phpspec2": "dev-develop",
+        "phpspec/php-diff": "*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

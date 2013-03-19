@@ -7,10 +7,10 @@ use PHPSpec2\ObjectBehavior;
 class ApiClient extends ObjectBehavior
 {
     /**
-     * @param Tan\Hydrator\ObjectHydrator $hydrator
-     * @param Tan\Http\Transporter        $transporter
-     * @param Guzzle\Message\Request      $request
-     * @param Guzzle\Message\Response     $response
+     * @param Tan\Hydrator\ObjectHydrator  $hydrator
+     * @param Tan\Http\Transporter         $transporter
+     * @param Guzzle\Http\Message\Request  $request
+     * @param Guzzle\Http\Message\Response $response
      */
     function let($httpClient, $hydrator, $transporter, $request, $response)
     {
@@ -25,9 +25,9 @@ class ApiClient extends ObjectBehavior
         $this->shouldHaveType('Tan\ApiClient');
     }
 
-    function its_getStopList_should_return_an_array($hydrator)
+    function its_getStopList_should_return_an_array($hydrator, $response)
     {
-        $stop = array(
+        $stops = array(array(
             'codeLieu' => 'commerce',
             'libelle'  => 'Commerce',
             'distance' => null,
@@ -35,10 +35,31 @@ class ApiClient extends ObjectBehavior
                 array('numLigne' => '51'),
                 array('numLigne' => '54')
             )
-        );
+        ));
 
-        $hydrator->hydrateFromResponse(ANY_ARGUMENT)->willReturn(array($stop));
+        $hydrator->hydrateFromResponse($response)->willReturn($stops);
 
-        $this->getStopList()->shouldReturn($stop);
+        $this->getStopList()->shouldReturn($stops);
+    }
+
+    function its_getWaitingTime_should_return_an_array($hydrator, $response)
+    {
+        $times = array(array(
+            'sens'       => 1,
+            'terminus'   => 'Orvault Grandval',
+            'infotrafic' => false,
+            'temps'      => '3\'',
+            'ligne'      => array(
+                'numLigne'  => '2',
+                'typeLigne' => 1
+            ),
+            'arret'      => array(
+                'codeArret' => 'recteurshmidt'
+            )
+        ));
+
+        $hydrator->hydrateFromResponse($response)->willReturn($times);
+
+        $this->getWaitingTime(ANY_ARGUMENT)->shouldReturn($times);
     }
 }

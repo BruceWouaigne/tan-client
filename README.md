@@ -4,7 +4,7 @@ Installation
 ============
 
 1. Clone this repository
-2. Install dependencies with `composer.phar install --prefer-dist`
+2. Install dependencies with `composer.phar install --prefer-dist` (see http://getcomposer.org/)
 3. Start playing!
 
 Usage

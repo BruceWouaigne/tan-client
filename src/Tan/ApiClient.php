@@ -55,7 +55,7 @@ class ApiClient
         return $this->hydrator->hydrateFromResponse($response);
     }
 
-    public function getWaitingTimeAtStop($locationCode, $lineCode, $direction)
+    public function getSchedule($locationCode, $lineCode, $direction)
     {
         $url      = sprintf('horairesarret.json/%s/%s/%d', $locationCode, $lineCode, $direction);
         $request  = $this->httpClient->get($url);

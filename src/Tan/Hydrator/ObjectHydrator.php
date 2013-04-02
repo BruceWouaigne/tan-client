@@ -17,7 +17,7 @@ class ObjectHydrator
         try {
             $datas = $response->json();
         } catch(\RuntimeException $ex) {
-            throw new HydratorException('Unable to parse result');
+            throw new HydratorException(sprintf('Unable to parse result: %s', $ex->getMessage()));
         }
 
         return $datas;

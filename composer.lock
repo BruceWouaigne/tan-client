@@ -241,12 +241,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec2.git",
-                "reference": "d138958550a35029fe767c8c222287f4178bd603"
+                "reference": "8e841da15e21121c4c96ef81ec1975ef984b813f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec2/zipball/d138958550a35029fe767c8c222287f4178bd603",
-                "reference": "d138958550a35029fe767c8c222287f4178bd603",
+                "url": "https://api.github.com/repos/phpspec/phpspec2/zipball/8e841da15e21121c4c96ef81ec1975ef984b813f",
+                "reference": "8e841da15e21121c4c96ef81ec1975ef984b813f",
                 "shasum": ""
             },
             "require": {

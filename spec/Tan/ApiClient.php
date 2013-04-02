@@ -62,4 +62,20 @@ class ApiClient extends ObjectBehavior
 
         $this->getWaitingTime(ANY_ARGUMENT)->shouldReturn($times);
     }
+
+    function its_getSchedule_should_return_an_array($hydrator, $response)
+    {
+        $schedule = array(
+            'arret'             => array(),
+            'prochainsParcours' => array(),
+            'ligne'             => array(),
+            'codeCouleur'       => 'R',
+            'plageDeService'    => 'plop',
+            'notes'             => array()
+        );
+
+        $hydrator->hydrateFromResponse($response, false)->willReturn($schedule);
+
+        $this->getSchedule(ANY_ARGUMENT, ANY_ARGUMENT, ANY_ARGUMENT)->shouldReturn($schedule);
+    }
 }

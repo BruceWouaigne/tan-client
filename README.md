@@ -12,7 +12,7 @@ Usage
 
 ```php
 <?php
-
+ 
 require './vendor/autoload.php';
 
 $client = new Tan\ApiClient;
